@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');
+.Container {
+  max-width: 1100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.Container h3 {
+  font-family: 'Tajawal';
+  font-size: 2rem;
+  margin: 1rem 14rem 0 auto;
+}
+.Vaccination {
+  font-family: 'Tajawal';
+  width: 900px;
+  min-height: 300px;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  margin: 1rem 15rem 2rem auto;
+  padding: 2rem 2rem;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+}
+
+.Vaccination span {
+  text-align: right;
+  display: block;
+  margin: 0.7rem 0;
+  box-sizing: border-box;
+}
+
+.Vaccination .UniqueSpan {
+  display: inline;
+  color: #69d885;
+  font-weight: 600;
+}
+
+.Vaccination .Btn {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  background-color: #4e7c80;
+  cursor: pointer;
+  color: #eee;
+  border-radius: 5px;
+
+  padding: 0.7rem 2rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 10px;
+  transition: all 0s ease-in-out;
+}
+
+.Btn:focus {
+  outline: none;
+}
+
+.Btn:hover {
+  background-color: #5a8f94;
+}
+
+.Btn:active {
+  transform: translateY(2px);
+}
+
+.Vaccination input[type='checkbox'] {
+  text-align: right;
+  margin-right: 2rem;
+  transform: scale(3);
+}

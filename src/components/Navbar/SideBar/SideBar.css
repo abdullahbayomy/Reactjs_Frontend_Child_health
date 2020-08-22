@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');
+
+.SideBar {
+  font-family: 'Tajawal';
+  position: fixed;
+  width: 320px;
+  max-width: 70%;
+  height: 100%;
+  left: 0;
+  top: 200;
+  z-index: 550;
+  background-color: rgb(240, 240, 240);
+  padding: 32px 16px;
+  border-right: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease-out;
+}
+
+.Open {
+  transform: translateX(0);
+}
+
+.Close {
+  transform: translateX(-100%);
+}
+
+.SideBar ul li {
+  margin: 1rem 0;
+  padding: 0.7rem 0;
+  font-size: 1.3rem;
+
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.SideBar ul li:hover {
+  background-color: rgb(221, 215, 215);
+}
+
+.SideBar ul li:active {
+  transform: translateY(1px);
+}
+
+.SideBar ul li a {
+  color: rgb(31, 29, 29);
+}
+
+.SideBar ul li:hover a {
+  color: rgb(102, 100, 100);
+}

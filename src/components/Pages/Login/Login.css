@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');
+
+/* Login Section */
+#Login {
+  font-family: 'Tajawal';
+  height: 100vh;
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 1rem 0rem 1rem;
+}
+
+#Login_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+
+  padding-top: 7rem;
+  color: #431c5b;
+
+  font-family: 'Roboto', sans-serif;
+}
+
+.Logo_img img {
+  display: inline-block;
+  width: 600px;
+}
+
+.Form_wrap {
+  margin-top: 3rem;
+
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+
+  border-radius: 10px;
+  /* text-align: center; */
+  animation: animateLoginImg 0.5s forwards ease-in-out;
+}
+
+.Form_wrap h2,
+.Form_wrap p {
+  text-align: center;
+  margin: 1rem 0;
+  animation: animateLoginImg 0.9s forwards ease-in-out;
+}
+
+.Form_wrap p {
+  animation: animateLoginImg 1.2s forwards ease-in-out;
+}
+
+.Form_wrap h2 {
+  font-size: 2rem;
+}
+
+.Form_wrap img {
+  display: block;
+  margin: 0 auto;
+  margin-top: 0.7rem;
+  width: 100px;
+  border-radius: 50px;
+  /* border: rgb(157, 119, 187) solid 1px; */
+
+  /* transition: all 2s ease-in-out; */
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+  animation: animateLoginImg 0.8s forwards ease-in-out;
+}
+
+.Form_wrap .Form_group {
+  text-align: right;
+  margin: 1rem 1rem;
+  animation: animateLoginImg 1s forwards ease-in-out;
+}
+@keyframes animateLoginImg {
+  from {
+    transform: translateX(800px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.Form_wrap .Form_group label {
+  display: block;
+  color: #55326b;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.Form_wrap .Form_group input {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: #ddd solid 1px;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  text-align: right;
+  transition: all 0.2s ease-in-out;
+}
+
+.Form_wrap .Form_group input:focus {
+  outline: none;
+  box-shadow: none;
+  border: rgb(121, 61, 170) solid 1px;
+
+  transform: translateY(1px);
+}
+
+.Btn_login {
+  display: block;
+  width: 60%;
+  margin: 1rem auto;
+  padding: 0.7rem 1rem;
+  border: none;
+  background-color: #431c5b;
+  color: #eee;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0s ease-in-out;
+}
+
+.Btn_login:hover {
+  background-color: #55326b;
+  /* transform: scale(1.01); */
+  /* transform: translateY(1px); */
+}
+
+.Btn_login:focus {
+  outline: none;
+  box-shadow: none;
+}
+.Btn_login:active {
+  transform: translateY(2px);
+}
+
+form p {
+  font-size: 1.3rem;
+}
+.inValid p {
+  animation: animateLoginImg 0.1s forwards ease-in-out;
+  color: red;
+}
+
+.UserRouteContainer {
+  text-align: center;
+  font-size: 1.2rem;
+  color: rgb(231, 73, 73);
+}

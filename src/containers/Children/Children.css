@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');
+
+.Children {
+  width: 100%;
+  padding: 4rem 0;
+  box-sizing: border-box;
+  font-family: 'Tajawal';
+}
+
+.Container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.Children .Count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  background-color: #5d9499;
+  border: 1px solid rgb(209, 209, 209);
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  /* padding: 3rem 1rem; */
+  width: 250px;
+  height: 250px;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+.Children .Count label {
+  padding: 0 2rem;
+}
+
+.Children .Count:hover {
+  color: rgb(255, 121, 73);
+  transform: translateY(1px);
+}
+
+/* --------- Buton Create Children------------- */
+
+.Children .CreateChild {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.Children .CreateChild button {
+  text-align: center;
+  font-size: 1.1rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  margin-bottom: 3rem;
+  background-color: #552572;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  border: none;
+}
+
+.Children .CreateChild button:focus {
+  outline: none;
+}
+
+.Children .CreateChild button:hover {
+  background-color: #50256b;
+}
+
+.Children .CreateChild button:active {
+  transform: translateY(2px);
+}
+
+/* Search input */
+
+.SearchContainer input[type='text'] {
+  display: inline-block;
+  width: 20%;
+  margin-top: 8rem;
+  margin-left: 15rem;
+  border: 1px solid;
+  border-color: #5d9499;
+  /* box-shadow: 2px 2px 10px #552572; */
+}
+
+.SearchContainer input[type='text']:focus,
+.SearchContainer input[type='text']:active {
+  border-color: #5d9499;
+  box-shadow: 1px 1px 5px #5d9499;
+
+  outline: none;
+}

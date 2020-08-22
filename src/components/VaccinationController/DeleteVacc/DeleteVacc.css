@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');
+
+.Container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  box-sizing: border-box;
+  min-height: 200px;
+  text-align: center;
+  font-family: 'Tajawal';
+}
+
+.Container h3 {
+  grid-column: 1 / span 2;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.Btn {
+  padding: 0.7rem 4rem;
+  margin: 1rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  background-color: #5d9499;
+  color: #fff;
+  cursor: pointer;
+}
+
+.Btn:hover {
+  background-color: #5a8f94;
+}
+
+.Btn:focus {
+  outline: none;
+}
+
+.Btn:active {
+  transform: translateY(2px);
+}
+
+.RedBtn .Btn {
+  background-color: #dc3545;
+}
+
+.RedBtn .Btn:hover {
+  background-color: #ce1b2d;
+}

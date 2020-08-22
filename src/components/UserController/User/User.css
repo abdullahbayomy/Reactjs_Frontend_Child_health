@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');
+
+.User {
+  font-family: 'Tajawal';
+  width: 800px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  margin: 1rem auto 0 auto;
+  padding: 2rem 2rem;
+  min-height: 300px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.User h4 {
+  display: inline-block;
+}
+
+.UserInner {
+  display: grid;
+  grid-auto-rows: 1fr;
+  padding-left: 1rem;
+  text-align: right;
+}
+.UserInner2 {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  padding-left: 1rem;
+}
+
+.Btn {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  background-color: #4e7c80;
+  cursor: pointer;
+  color: #eee;
+  border-radius: 5px;
+
+  padding: 0.7rem 1rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 10px;
+  transition: all 0s ease-in-out;
+}
+
+.Btn:focus {
+  outline: none;
+}
+
+.Btn:hover {
+  background-color: #5a8f94;
+}
+
+.Btn:active {
+  transform: translateY(2px);
+}
+
+.UserInner .Btn {
+  /* margin-left: 5rem; */
+  width: 180px;
+  height: 50px;
+}
+
+.UserInner2 .Btn {
+  grid-column: 1 / span 2;
+  grid-row: 4 / span 1;
+  width: 150px;
+  height: 50px;
+}

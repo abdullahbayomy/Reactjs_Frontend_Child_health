@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');
+
+.Container {
+  max-width: 1100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  /* delet down later */
+  position: relative;
+}
+
+.Container h1 {
+  font-family: 'Tajawal';
+  font-size: 2rem;
+  margin: 4rem 14rem 0 auto;
+}
+
+.BtnAddDiv {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 10rem;
+  overflow: hidden;
+}
+.BtnAddDiv button {
+  margin-top: 7rem;
+  font-family: 'Tajawal', sans-serif;
+  text-align: center;
+  font-size: 1.1rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  margin-bottom: 3rem;
+  background-color: #552572;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  border: none;
+}
+.BtnAddDiv button:focus {
+  outline: none;
+}
+.BtnAddDiv button:hover {
+  background-color: #50256b;
+}
+.BtnAddDiv button:active {
+  transform: translateY(2px);
+}

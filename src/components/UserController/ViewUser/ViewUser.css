@@ -1,0 +1,102 @@
+.ViewUser * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.ViewUser {
+  width: 900px;
+
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  text-align: right;
+  margin: 4rem auto 0 auto;
+  padding: 2rem 2rem;
+  height: 400px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 1.1rem;
+}
+
+.ViewUser h4 {
+  display: inline-block;
+}
+
+.ViewUserInner {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+
+.ViewUserInner span {
+  margin-right: 2rem;
+}
+
+.ViewUserInner .Btn {
+  background-color: #4e7c80;
+
+  color: #fff;
+}
+.ViewUserInner .Btn:hover {
+  background-color: #5a8f94;
+}
+.ViewUserInner2 {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+
+  padding-left: 1rem;
+  margin-top: 1rem;
+  margin-right: 3rem;
+}
+
+.ViewUserInner2 .Btn {
+  margin-left: 2rem;
+}
+
+.Btn {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  /* display: block; */
+  /* width: 60%; */
+  margin-top: 1rem;
+  padding: 0.7rem 1rem;
+  border: none;
+  background-color: #dc3545;
+
+  color: #eee;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0s ease-in-out;
+  width: 70%;
+  height: 50px;
+}
+
+.Btn:focus {
+  outline: none;
+}
+
+.Btn:hover {
+  background-color: #ce1b2d;
+}
+
+.Btn:active {
+  transform: translateY(2px);
+}
+
+.ViewUserInner2 .Btn {
+  /* grid-column: 2 / span 2; */
+  grid-row: 4 / span 1;
+}
+
+/* ------------------------------------ Second part Children ----------------------------- */
+
+.Children {
+  /* text-align: center; */
+  /* margin: auto 0; */
+  width: 100%;
+  padding: 2rem 0;
+  box-sizing: border-box;
+}

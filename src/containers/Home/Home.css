@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');
+
+.Container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  box-sizing: border-box;
+  width: 1170px;
+  margin: 4rem auto;
+  text-align: center;
+  font-family: 'Tajawal';
+}
+
+.Container .VaccContainer {
+  grid-column: 1 / span 2;
+  text-align: center;
+}
+
+.VaccContainer .VaccButtonContainer {
+  min-height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border: none;
+}
+
+.VaccContainer .VaccButtonContainer:focus {
+  outline: none;
+}
+
+.TakenContainer {
+  margin-top: 3rem;
+  margin-right: 1rem;
+}
+
+.NotTakenContainer {
+  margin-top: 3rem;
+  padding-left: 1rem;
+  border-left: 1px #333 dashed;
+}
+
+.TakenContent {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.SearchContainer input[type='text'] {
+  margin: 3rem 0;
+  width: 50%;
+  border: 1px solid;
+  border-color: #5d9499;
+}
+
+.SearchContainer input[type='text']:focus,
+.SearchContainer input[type='text']:active {
+  border-color: #5d9499;
+  box-shadow: 1px 1px 5px #5d9499;
+
+  outline: none;
+}

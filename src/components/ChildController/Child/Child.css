@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');
+
+.Children * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.Children {
+  width: 850px;
+  font-family: 'Tajawal';
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  margin: 2rem auto 4rem auto;
+  padding: 2rem 2rem;
+  height: 350px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 1.1rem;
+}
+
+.Children h4 {
+  display: inline-block;
+}
+
+.ChildrenInner {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  padding-left: 1rem;
+  margin-top: 1rem;
+  text-align: right;
+}
+
+.ChildrenInner2 {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  text-align: right;
+  padding-left: 1rem;
+  margin-top: 1rem;
+  margin-right: 2rem;
+}
+
+.ChildrenInner2 .Btn {
+  margin-left: 0rem;
+}
+
+.Btn {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  padding: 0.7rem 1rem;
+  border: none;
+  background-color: #4e7c80;
+  color: #eee;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0s ease-in-out;
+  width: 70%;
+  height: 50px;
+}
+
+.Btn:focus {
+  outline: none;
+}
+
+.Btn:hover {
+  background-color: #5a8f94;
+}
+
+.Btn:active {
+  transform: translateY(2px);
+}
+
+.ChildrenInner2 .Btn {
+  /* grid-column: 2 / span 2; */
+  grid-row: 4 / span 1;
+}

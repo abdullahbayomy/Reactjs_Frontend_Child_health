@@ -1,0 +1,75 @@
+.Form_wrap {
+  margin: auto 0;
+  box-sizing: border-box;
+}
+
+.Form_wrap h1 {
+  text-align: center;
+  color: #55326b;
+}
+
+.Form_group label {
+  color: #55326b;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  font-weight: 700;
+}
+
+/* .Form_group input {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: #ddd solid 1px;
+  border-radius: 25px;
+  font-size: 1.2rem;
+}
+
+.Form_group input:focus,
+.Form_group input:active {
+  outline: none;
+} */
+
+input[type='checkbox'] {
+  margin-left: 2rem;
+  transform: scale(3);
+}
+
+.ContainerBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.Btn {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  background-color: #4e7c80;
+  cursor: pointer;
+  color: #eee;
+  border-radius: 5px;
+
+  padding: 0.7rem 2rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 10px;
+  transition: all 0s ease-in-out;
+}
+
+.Btn:focus {
+  outline: none;
+}
+
+.Btn:hover {
+  background-color: #5a8f94;
+}
+
+.Btn:active {
+  transform: translateY(2px);
+}
+
+.RedBtn .Btn {
+  background-color: #dc3545;
+}
+.RedBtn .Btn:hover {
+  background-color: #ce1b2d;
+}
