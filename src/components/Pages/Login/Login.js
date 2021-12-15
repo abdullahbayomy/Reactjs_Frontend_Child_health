@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
-import classes from './Login.css';
-import axios from 'axios';
-import { withRouter } from 'react-router-dom';
-import Backdrop from '../../UI/Backdrop/Backdrop';
-import Modal from '../../UI/Modal/Modal';
+import React, { Component } from "react";
+import classes from "./Login.css";
+import axios from "axios";
+import { withRouter } from "react-router-dom";
+import Backdrop from "../../UI/Backdrop/Backdrop";
+import Modal from "../../UI/Modal/Modal";
 
 class Login extends Component {
   state = {
     login: {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     },
     normalUser: false,
     errors: {
       isError: false,
-      inValid: 'invalid user name or password',
+      inValid: "invalid user name or password",
     },
     showModalUser: false,
   };
@@ -29,26 +29,30 @@ class Login extends Component {
     e.preventDefault();
     const config = {
       header: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     };
     axios
-      .post('http://localhost:5000/api/v1/auth/login', this.state.login, config)
+      .post(
+        "https://child-health-is.herokuapp.com/api/v1/auth/login",
+        this.state.login,
+        config
+      )
       .then((response) => {
         // localStorage.setItem('token', response.data.token);
         if (response.data.token) {
-          axios.defaults.headers.common['x-auth-token'] = response.data.token;
+          axios.defaults.headers.common["x-auth-token"] = response.data.token;
           axios
-            .get('http://localhost:5000/api/v1/auth/me')
+            .get("https://child-health-is.herokuapp.com/api/v1/auth/me")
             .then((res) => {
               console.log(res);
               console.log(res.data.data.role);
-              if (res.data.data.role === 'admin') {
-                localStorage.setItem('auth', res.data.data.role);
-                this.props.history.push('/');
+              if (res.data.data.role === "admin") {
+                localStorage.setItem("auth", res.data.data.role);
+                this.props.history.push("/");
                 window.location.reload(false);
               }
-              if (res.data.data.role === 'user') {
+              if (res.data.data.role === "user") {
                 this.setState({ normalUser: true, showModalUser: true });
               }
             })
@@ -56,7 +60,7 @@ class Login extends Component {
               console.log(error);
             });
         } else {
-          delete axios.defaults.headers.common['x-auth-token'];
+          delete axios.defaults.headers.common["x-auth-token"];
         }
       })
       .catch((error) => {
@@ -64,7 +68,7 @@ class Login extends Component {
         this.setState({
           errors: {
             isError: true,
-            inValid: 'invalid user name or password',
+            inValid: "invalid user name or password",
           },
         });
         console.log(this.state.errors);
@@ -83,37 +87,37 @@ class Login extends Component {
           <div id={classes.Login_grid}>
             <div className={classes.Logo_img}>
               <img
-                src={require('../../../assets/images/medical_research2.svg')}
-                alt='Medical '
+                src={require("../../../assets/images/medical_research2.svg")}
+                alt="Medical "
               />
             </div>
             <div className={classes.Form_wrap}>
               <img
-                src={require('../../../assets/images/avatar.svg')}
-                alt='avatar'
+                src={require("../../../assets/images/avatar.svg")}
+                alt="avatar"
               />
               <h2>مرحباً</h2>
               <form onSubmit={this.submitHandler}>
                 <div className={classes.Form_group}>
-                  <label htmlFor='email'>البريد الإلكتروني</label>
+                  <label htmlFor="email">البريد الإلكتروني</label>
                   <input
-                    type='email'
-                    name='email'
-                    id='email'
-                    placeholder='ادخل البريد الإلكتروني'
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="ادخل البريد الإلكتروني"
                     onChange={this.changeHandler}
                     required
                   />
                 </div>
                 <div className={classes.Form_group}>
-                  <label htmlFor='password'>الرقم السري</label>
+                  <label htmlFor="password">الرقم السري</label>
                   <input
-                    type='password'
-                    name='password'
-                    id='password'
-                    placeholder='الرقم السري'
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="الرقم السري"
                     onChange={this.changeHandler}
-                    minLength='6'
+                    minLength="6"
                     required
                   />
                   <div className={classes.inValid}>
@@ -124,13 +128,13 @@ class Login extends Component {
                 </div>
 
                 <div className={classes.Form_group}>
-                  <button type='submit' className={classes.Btn_login}>
+                  <button type="submit" className={classes.Btn_login}>
                     تسجيل الدخول
                   </button>
                 </div>
                 <p>
                   عند الضغط علي تسجل الدخول، سوف تذهب الي&nbsp;
-                  <a href='/'>صفحة لوحة التحكم</a>
+                  <a href="/">صفحة لوحة التحكم</a>
                 </p>
               </form>
             </div>

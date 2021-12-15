@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import { withRouter } from 'react-router-dom';
-import classes from './UpdateStatus.css';
+import React, { Component } from "react";
+import axios from "axios";
+import { withRouter } from "react-router-dom";
+import classes from "./UpdateStatus.css";
 
 class UpdateStatus extends Component {
   state = {
@@ -31,12 +31,12 @@ class UpdateStatus extends Component {
 
     const config = {
       header: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     };
     axios
       .put(
-        `http://localhost:5000/api/v1/children/${this.props.match.params.id}`,
+        `https://child-health-is.herokuapp.com/api/v1/children/${this.props.match.params.id}`,
         allVacc,
         config
       )
@@ -47,17 +47,17 @@ class UpdateStatus extends Component {
     return (
       <form
         style={{
-          display: this.props.show ? 'block' : 'none',
+          display: this.props.show ? "block" : "none",
         }}
       >
         <div className={classes.Form_wrap}>
           <h1>Update Status</h1>
 
           <div className={classes.Form_group}>
-            <label htmlFor='checked'>update status of vaccination</label>
+            <label htmlFor="checked">update status of vaccination</label>
             <input
-              type='checkbox'
-              name='checked'
+              type="checkbox"
+              name="checked"
               checked={this.state.taken}
               onChange={this.changeHandler}
               onClick={this.changeState}
@@ -67,7 +67,7 @@ class UpdateStatus extends Component {
         <div className={classes.ContainerBtn}>
           <div>
             <button
-              type='submit'
+              type="submit"
               className={classes.Btn}
               onClick={this.submitHandler}
             >

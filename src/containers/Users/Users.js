@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import classes from './Users.css';
-import Aux from '../../hoc/auxilliary';
-import Spinner from '../.././components/UI/Spinner/Spinner';
-import UserControl from '../../components/UserController/UserControl';
-import CreateUser from '../../components/UserController/CreateUser/CreateUser';
-import Modal from '../../components/UI/Modal/Modal';
-import Backdrop from '../../components/UI/Backdrop/Backdrop';
-import ValidateFormUser from '../../hoc/ValidateFormUser';
+import React, { Component } from "react";
+import axios from "axios";
+import classes from "./Users.css";
+import Aux from "../../hoc/auxilliary";
+import Spinner from "../.././components/UI/Spinner/Spinner";
+import UserControl from "../../components/UserController/UserControl";
+import CreateUser from "../../components/UserController/CreateUser/CreateUser";
+import Modal from "../../components/UI/Modal/Modal";
+import Backdrop from "../../components/UI/Backdrop/Backdrop";
+import ValidateFormUser from "../../hoc/ValidateFormUser";
 
 class Users extends Component {
   constructor(props) {
@@ -23,20 +23,20 @@ class Users extends Component {
     showModal: false,
     modalChild: false,
     contact: {
-      name: '',
-      email: '',
-      phone: '',
-      address: '',
-      password: '',
-      password2: '',
-      role: 'user',
+      name: "",
+      email: "",
+      phone: "",
+      address: "",
+      password: "",
+      password2: "",
+      role: "user",
     },
     errors: {},
     filterdUser: null,
   };
   componentDidMount() {
     axios
-      .get('http://localhost:5000/api/v1/auth/users')
+      .get("https://child-health-is.herokuapp.com/api/v1/auth/users")
       .then((response) => {
         this.setState({
           loading: true,
@@ -73,14 +73,18 @@ class Users extends Component {
       this.setState({ loadCreate: true });
       const config = {
         header: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
       };
       let newUser = {
         ...this.state.contact,
       };
       axios
-        .post('http://localhost:5000/api/v1/auth/users', newUser, config)
+        .post(
+          "https://child-health-is.herokuapp.com/api/v1/auth/users",
+          newUser,
+          config
+        )
         .then((response) => {
           console.log(response);
           this.setState({ loadCreate: false, showModal: false });
@@ -91,13 +95,13 @@ class Users extends Component {
           this.setState({ loadCreate: false, showModal: false });
         });
       let input = {};
-      input['name'] = '';
-      input['email'] = '';
-      input['phone'] = '';
-      input['address'] = '';
-      input['password'] = '';
-      input['password2'] = '';
-      input['role'] = 'user';
+      input["name"] = "";
+      input["email"] = "";
+      input["phone"] = "";
+      input["address"] = "";
+      input["password"] = "";
+      input["password2"] = "";
+      input["role"] = "user";
       this.setState({ contact: input });
     }
     this.setState({ errors });
@@ -105,14 +109,14 @@ class Users extends Component {
 
   filtered = (input) => {
     let filter = this.state.persons.filter((user) => {
-      const regex = new RegExp(`${input}`, 'gi');
+      const regex = new RegExp(`${input}`, "gi");
       return user.name.match(regex) || user.phone.match(regex);
     });
     this.setState({ filterdUser: filter });
   };
 
   changeSearchHandler = (e) => {
-    if (this.text.current.value !== '') {
+    if (this.text.current.value !== "") {
       this.filtered(e.target.value);
       console.log(this.state.filterdUser);
     } else {
@@ -129,30 +133,30 @@ class Users extends Component {
             <div className={classes.Count}>
               {this.state.count}
               <label>
-                &nbsp;: الكل &nbsp;<i className='fas fa-users'></i>
+                &nbsp;: الكل &nbsp;<i className="fas fa-users"></i>
               </label>
             </div>
           </div>
 
           <div className={classes.CreateUser}>
             <button onClick={this.showCreateUser}>
-              مستخدم&nbsp;<i className='fas fa-user-plus'></i>
+              مستخدم&nbsp;<i className="fas fa-user-plus"></i>
             </button>
           </div>
           <div className={classes.SearchContainer}>
             <input
               ref={this.text}
-              type='text'
-              placeholder='Search'
+              type="text"
+              placeholder="Search"
               onChange={this.changeSearchHandler}
             />
           </div>
           <h1
             style={{
-              textAlign: 'center',
-              fontWeight: 'bold',
-              marginTop: '1rem',
-              color: '#0c2854',
+              textAlign: "center",
+              fontWeight: "bold",
+              marginTop: "1rem",
+              color: "#0c2854",
             }}
           >
             قائمة المستخدمين

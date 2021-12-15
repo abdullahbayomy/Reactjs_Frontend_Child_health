@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
-import Aux from '../../../hoc/auxilliary';
-import axios from 'axios';
-import Spinner from '../../UI/Spinner/Spinner';
+import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+import Aux from "../../../hoc/auxilliary";
+import axios from "axios";
+import Spinner from "../../UI/Spinner/Spinner";
 
 class UpdateUser extends Component {
   state = {
     checked: true,
     currentUser: null,
-    password: '',
+    password: "",
     loadUser: false,
     loadSpinnerUpdate: false,
   };
@@ -60,13 +60,13 @@ class UpdateUser extends Component {
 
     const config = {
       header: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     };
 
     axios
       .put(
-        `http://localhost:5000/api/v1/auth/users/${this.props.match.params.id}`,
+        `https://child-health-is.herokuapp.com/api/v1/auth/users/${this.props.match.params.id}`,
         userData,
         config
       )
@@ -89,49 +89,49 @@ class UpdateUser extends Component {
         <Aux>
           <form
             style={{
-              display: this.props.show ? 'block' : 'none',
+              display: this.props.show ? "block" : "none",
             }}
           >
             <h1>Update User</h1>
             <div>
-              <label htmlFor='name'>Name</label>
+              <label htmlFor="name">Name</label>
               <input
-                type='text'
-                placeholder='Name'
-                name='name'
+                type="text"
+                placeholder="Name"
+                name="name"
                 value={this.state.currentUser.name}
                 onChange={this.changeHandler}
                 required
               />
             </div>
             <div>
-              <label htmlFor='email'>Email</label>
+              <label htmlFor="email">Email</label>
               <input
-                type='email'
-                placeholder='Email'
-                name='email'
+                type="email"
+                placeholder="Email"
+                name="email"
                 value={this.state.currentUser.email}
                 onChange={this.changeHandler}
                 required
               />
             </div>
             <div>
-              <label htmlFor='phone'>Phone</label>
+              <label htmlFor="phone">Phone</label>
               <input
-                type='text'
-                placeholder='Phone'
-                name='phone'
+                type="text"
+                placeholder="Phone"
+                name="phone"
                 value={this.state.currentUser.phone}
                 onChange={this.changeHandler}
                 required
               />
             </div>
             <div>
-              <label htmlFor='address'>Address</label>
+              <label htmlFor="address">Address</label>
               <input
-                type='text'
-                placeholder='Address'
-                name='address'
+                type="text"
+                placeholder="Address"
+                name="address"
                 value={this.state.currentUser.address}
                 onChange={this.changeHandler}
                 required
@@ -139,15 +139,15 @@ class UpdateUser extends Component {
             </div>
             <div>
               <input
-                type='checkbox'
-                name='checkpassword'
+                type="checkbox"
+                name="checkpassword"
                 onClick={this.switchCheckHandler}
               />
-              <label htmlFor='password'>Password</label>
+              <label htmlFor="password">Password</label>
               <input
-                type='password'
-                placeholder='Password'
-                name='password'
+                type="password"
+                placeholder="Password"
+                name="password"
                 disabled={this.state.checked}
                 value={this.state.currentUser.password}
                 onChange={this.changeHandler}
@@ -155,7 +155,7 @@ class UpdateUser extends Component {
               />
             </div>
 
-            <button type='submit' onClick={this.submitHandler}>
+            <button type="submit" onClick={this.submitHandler}>
               Submit
             </button>
             <button onClick={this.props.cancel}>Cancel</button>

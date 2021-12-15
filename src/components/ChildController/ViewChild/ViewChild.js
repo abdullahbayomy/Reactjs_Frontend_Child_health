@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import Aux from '../../../hoc/auxilliary';
-import classes from './ViewChild.css';
-import axios from 'axios';
-import Spinner from '../../UI/Spinner/Spinner';
-import VaccChild from './VaccChild/VaccChild';
-import Backdrop from '../../UI/Backdrop/Backdrop';
-import Modal from '../../UI/Modal/Modal';
-import DeleteChild from '../DeleteChild/DeleteChild';
-import UpdateChild from '../UpdateChild/UpdateChild';
+import React, { Component } from "react";
+import Aux from "../../../hoc/auxilliary";
+import classes from "./ViewChild.css";
+import axios from "axios";
+import Spinner from "../../UI/Spinner/Spinner";
+import VaccChild from "./VaccChild/VaccChild";
+import Backdrop from "../../UI/Backdrop/Backdrop";
+import Modal from "../../UI/Modal/Modal";
+import DeleteChild from "../DeleteChild/DeleteChild";
+import UpdateChild from "../UpdateChild/UpdateChild";
 
 class ViewChild extends Component {
   state = {
@@ -25,7 +25,7 @@ class ViewChild extends Component {
 
     axios
       .get(
-        `http://localhost:5000/api/v1/children/${this.props.match.params.id}`
+        `https://child-health-is.herokuapp.com/api/v1/children/${this.props.match.params.id}`
       )
       .then((response) => {
         console.log(response.data.data);
@@ -33,7 +33,7 @@ class ViewChild extends Component {
 
         axios
           .get(
-            `http://localhost:5000/api/v1/auth/users/${response.data.data.user}`
+            `https://child-health-is.herokuapp.com/api/v1/auth/users/${response.data.data.user}`
           )
           .then((response) => {
             console.log(response.data.data);
@@ -73,13 +73,13 @@ class ViewChild extends Component {
 
     const config = {
       header: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     };
 
     axios
       .put(
-        `http://localhost:5000/api/v1/children/${this.props.match.params.id}`,
+        `https://child-health-is.herokuapp.com/api/v1/children/${this.props.match.params.id}`,
         this.state.child,
         config
       )
@@ -140,26 +140,26 @@ class ViewChild extends Component {
                   <span>
                     &nbsp; العنوان :&nbsp;&nbsp;{this.state.child.birthPlace}
                     &nbsp;&nbsp;
-                    <i className='fas fa-map-marker-alt'></i>
+                    <i className="fas fa-map-marker-alt"></i>
                   </span>
                   <span>
                     {hasTaken.length}&nbsp;&nbsp;: كل التطعيمات &nbsp;
-                    <i className='fas fa-user-md'></i>
+                    <i className="fas fa-user-md"></i>
                   </span>
                   <span>
                     {taken}&nbsp;&nbsp;: التطعيمات المأخوذة &nbsp;
-                    <i className='fas fa-syringe'></i>
+                    <i className="fas fa-syringe"></i>
                   </span>
                   <span>
                     {notTaken} &nbsp;&nbsp;: التطعيمات المتبقية &nbsp;
-                    <i className='fas fa-notes-medical'></i>
+                    <i className="fas fa-notes-medical"></i>
                   </span>
                   <button
                     className={classes.Btn}
                     onClick={this.showDeleteChild}
                   >
-                    {' '}
-                    حذف الطفل{' '}
+                    {" "}
+                    حذف الطفل{" "}
                   </button>
                 </div>
 
@@ -172,20 +172,20 @@ class ViewChild extends Component {
                     &nbsp; أسم الأم :&nbsp;&nbsp;{this.state.user.name}
                     &nbsp;&nbsp;
                     <span>
-                      <i className='fas fa-user'></i>
+                      <i className="fas fa-user"></i>
                     </span>
                   </h4>
                   <span>
                     {this.state.user.phone} &nbsp;: الهاتف &nbsp;&nbsp;
-                    <i className='fas fa-phone'></i>
+                    <i className="fas fa-phone"></i>
                   </span>
 
                   <button
                     className={classes.Btn}
                     onClick={this.showUpdateChild}
                   >
-                    {' '}
-                    تعديل{' '}
+                    {" "}
+                    تعديل{" "}
                   </button>
                 </div>
               </div>
@@ -210,7 +210,7 @@ class ViewChild extends Component {
 
         {this.state.loading ? (
           <Aux>
-            {' '}
+            {" "}
             <Backdrop
               show={this.state.showDelte}
               clicked={this.showDeleteChild}
@@ -221,13 +221,13 @@ class ViewChild extends Component {
                 clicked={this.showDeleteChild}
                 idUser={this.state.user.id}
               />
-            </Modal>{' '}
+            </Modal>{" "}
           </Aux>
         ) : null}
 
         {this.state.loading ? (
           <Aux>
-            {' '}
+            {" "}
             <Backdrop
               show={this.state.showUpdate}
               clicked={this.showUpdateChild}
@@ -244,7 +244,7 @@ class ViewChild extends Component {
                   submitted={this.submitHandler}
                 />
               )}
-            </Modal>{' '}
+            </Modal>{" "}
           </Aux>
         ) : null}
       </Aux>

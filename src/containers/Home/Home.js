@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import classes from './Home.css';
-import axios from 'axios';
-import VaccButton from '../../components/HomeControl/VaccButton/VaccButton';
-import HomeControl from '../../components/HomeControl/HomeControl';
-import Spinner from '../../components/UI/Spinner/Spinner';
-import Aux from '../../hoc/auxilliary';
+import React, { Component } from "react";
+import classes from "./Home.css";
+import axios from "axios";
+import VaccButton from "../../components/HomeControl/VaccButton/VaccButton";
+import HomeControl from "../../components/HomeControl/HomeControl";
+import Spinner from "../../components/UI/Spinner/Spinner";
+import Aux from "../../hoc/auxilliary";
 
 class Home extends Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class Home extends Component {
   componentDidMount() {
     console.log(this.props);
     axios
-      .get('http://localhost:5000/api/v1/children')
+      .get("https://child-health-is.herokuapp.com/api/v1/children")
       .then((response) => {
         this.setState({
           loading: true,
@@ -94,14 +94,14 @@ class Home extends Component {
 
   filtered = (input) => {
     let filter = this.state.childenTaken.filter((child) => {
-      const regex = new RegExp(`${input}`, 'gi');
+      const regex = new RegExp(`${input}`, "gi");
       return child.user.name.match(regex) || child.user.phone.match(regex);
     });
     this.setState({ filterdTaken: filter });
   };
 
   changeSearchHandler = (e) => {
-    if (this.text.current.value !== '') {
+    if (this.text.current.value !== "") {
       this.filtered(e.target.value);
     } else {
       this.setState({ filterdTaken: null });
@@ -112,14 +112,14 @@ class Home extends Component {
 
   filtered2 = (input) => {
     let filter = this.state.childenNotTaken.filter((child) => {
-      const regex = new RegExp(`${input}`, 'gi');
+      const regex = new RegExp(`${input}`, "gi");
       return child.user.name.match(regex) || child.user.phone.match(regex);
     });
     this.setState({ filterdNotTaken: filter });
   };
 
   changeSearchHandler2 = (e) => {
-    if (this.text2.current.value !== '') {
+    if (this.text2.current.value !== "") {
       this.filtered2(e.target.value);
     } else {
       this.setState({ filterdNotTaken: null });
@@ -157,8 +157,8 @@ class Home extends Component {
                 <div className={classes.SearchContainer}>
                   <input
                     ref={this.text}
-                    type='text'
-                    placeholder='Search'
+                    type="text"
+                    placeholder="Search"
                     onChange={this.changeSearchHandler}
                   />
                 </div>
@@ -183,8 +183,8 @@ class Home extends Component {
                 <div className={classes.SearchContainer}>
                   <input
                     ref={this.text2}
-                    type='text'
-                    placeholder='Search'
+                    type="text"
+                    placeholder="Search"
                     onChange={this.changeSearchHandler2}
                   />
                 </div>

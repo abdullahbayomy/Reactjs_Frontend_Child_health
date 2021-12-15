@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import Vacc from '../../components/VaccinationController/Vacc/Vacc';
-import axios from 'axios';
-import Spinner from '../../components/UI/Spinner/Spinner';
-import classes from './Vaccination.css';
-import Backdrop from '../../components/UI/Backdrop/Backdrop';
-import Modal from '../../components/UI/Modal/Modal';
-import UpdateVaccintion from '../../components/VaccinationController/UpdateVaccintion/UpdateVaccintion';
-import Aux from '../../hoc/auxilliary';
+import React, { Component } from "react";
+import Vacc from "../../components/VaccinationController/Vacc/Vacc";
+import axios from "axios";
+import Spinner from "../../components/UI/Spinner/Spinner";
+import classes from "./Vaccination.css";
+import Backdrop from "../../components/UI/Backdrop/Backdrop";
+import Modal from "../../components/UI/Modal/Modal";
+import UpdateVaccintion from "../../components/VaccinationController/UpdateVaccintion/UpdateVaccintion";
+import Aux from "../../hoc/auxilliary";
 
 class Vaccination extends Component {
   state = {
@@ -17,7 +17,7 @@ class Vaccination extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:5000/api/v1/children')
+      .get("https://child-health-is.herokuapp.com/api/v1/children")
       .then((response) => {
         this.setState({
           loading: true,
@@ -66,9 +66,9 @@ class Vaccination extends Component {
           <div className={classes.Container}>
             <h1
               style={{
-                textAlign: 'center',
-                fontWeight: 'bold',
-                color: '#0c2854',
+                textAlign: "center",
+                fontWeight: "bold",
+                color: "#0c2854",
               }}
             >
               قائمة التطعيمات

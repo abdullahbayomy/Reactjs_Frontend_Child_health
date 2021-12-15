@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import classes from './DeleteUser.css';
-import axios from 'axios';
-import { withRouter } from 'react-router-dom';
+import React, { Component } from "react";
+import classes from "./DeleteUser.css";
+import axios from "axios";
+import { withRouter } from "react-router-dom";
 
 class DeleteUser extends Component {
   deleteUserHandler = () => {
     axios
       .delete(
-        `http://localhost:5000/api/v1/auth/users/${this.props.match.params.id}`
+        `https://child-health-is.herokuapp.com/api/v1/auth/users/${this.props.match.params.id}`
       )
       .then((response) => {
-        this.props.history.replace('/users');
+        this.props.history.replace("/users");
       })
       .catch((error) => console.log(error));
   };
@@ -18,7 +18,7 @@ class DeleteUser extends Component {
     return (
       <div
         style={{
-          display: this.props.show ? 'block' : 'none',
+          display: this.props.show ? "block" : "none",
         }}
       >
         <div className={classes.Container}>

@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import classes from './User.css';
-import Aux from '../../../hoc/auxilliary';
-import { withRouter } from 'react-router-dom';
-import Backdrop from '../../UI/Backdrop/Backdrop';
-import Modal from '../../UI/Modal/Modal';
-import CreateChild from '../../ChildController/CreateChild/CreateChild';
-import ValidateFormChild from './ValidateFormChild';
-import axios from 'axios';
-import Spinner from '../../UI/Spinner/Spinner';
+import React, { Component } from "react";
+import classes from "./User.css";
+import Aux from "../../../hoc/auxilliary";
+import { withRouter } from "react-router-dom";
+import Backdrop from "../../UI/Backdrop/Backdrop";
+import Modal from "../../UI/Modal/Modal";
+import CreateChild from "../../ChildController/CreateChild/CreateChild";
+import ValidateFormChild from "./ValidateFormChild";
+import axios from "axios";
+import Spinner from "../../UI/Spinner/Spinner";
 
 class User extends Component {
   state = {
@@ -15,12 +15,12 @@ class User extends Component {
     modalChild: false,
     loadCreate: false,
     contact: {
-      childName: '',
-      childGender: 'ذكر',
-      registerNumber: '',
-      registerDate: '',
-      birthDate: '',
-      birthPlace: '',
+      childName: "",
+      childGender: "ذكر",
+      registerNumber: "",
+      registerDate: "",
+      birthDate: "",
+      birthPlace: "",
     },
     errors: {},
   };
@@ -33,7 +33,7 @@ class User extends Component {
   selectedIdHandler = () => {
     const newId = this.props.helpId;
     this.setState({ selectedId: newId });
-    this.props.history.push('/users/' + newId);
+    this.props.history.push("/users/" + newId);
   };
 
   changeHandler = (e) => {
@@ -54,7 +54,7 @@ class User extends Component {
       this.setState({ loadCreate: true });
       const config = {
         header: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
       };
       let newUser = {
@@ -63,7 +63,7 @@ class User extends Component {
 
       axios
         .post(
-          `http://localhost:5000/api/v1/auth/users/${newId}/children`,
+          `https://child-health-is.herokuapp.com/api/v1/auth/users/${newId}/children`,
           newUser,
           config
         )
@@ -75,12 +75,12 @@ class User extends Component {
           this.setState({ loadCreate: false, modalChild: false });
         });
       let input = {};
-      input['childName'] = '';
-      input['registerNumber'] = '';
-      input['registerDate'] = '';
-      input['birthDate'] = '';
-      input['birthPlace'] = '';
-      input['childGender'] = 'ذكر';
+      input["childName"] = "";
+      input["registerNumber"] = "";
+      input["registerDate"] = "";
+      input["birthDate"] = "";
+      input["birthPlace"] = "";
+      input["childGender"] = "ذكر";
       this.setState({ contact: input });
     }
     this.setState({ errors });
@@ -112,23 +112,23 @@ class User extends Component {
               الاسم :&nbsp;{this.props.name}
               &nbsp;&nbsp;
               <span>
-                <i className='fas fa-user'></i>
+                <i className="fas fa-user"></i>
               </span>
             </h4>
             <span>
               {this.props.email}
               &nbsp;&nbsp;: البريد الإلكتروني &nbsp;
-              <i className='fas fa-mail-bulk'></i>
+              <i className="fas fa-mail-bulk"></i>
             </span>
             <span>
               {this.props.phone}
-              &nbsp;&nbsp;: التليفون &nbsp;<i className='fas fa-phone'></i>
+              &nbsp;&nbsp;: التليفون &nbsp;<i className="fas fa-phone"></i>
             </span>
             <div className={classes.UserInner}>
               <div onClick={this.showCreateChild}>
                 <button className={classes.Btn} onClick={this.props.clicked}>
-                  {' '}
-                  اضافة طفل{' '}
+                  {" "}
+                  اضافة طفل{" "}
                 </button>
               </div>
             </div>

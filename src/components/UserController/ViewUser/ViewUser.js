@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import classes from './ViewUser.css';
-import axios from 'axios';
-import Aux from '../../../hoc/auxilliary';
-import Spinner from '../../UI/Spinner/Spinner';
-import ChildControl from '../../ChildController/ChildControl';
-import Backdrop from '../../UI/Backdrop/Backdrop';
-import Modal from '../../UI/Modal/Modal';
-import UpdateUser from '../UpdateUser/UpdateUser';
-import DeleteUser from '../DeleteUser/DeleteUser';
+import React, { Component } from "react";
+import classes from "./ViewUser.css";
+import axios from "axios";
+import Aux from "../../../hoc/auxilliary";
+import Spinner from "../../UI/Spinner/Spinner";
+import ChildControl from "../../ChildController/ChildControl";
+import Backdrop from "../../UI/Backdrop/Backdrop";
+import Modal from "../../UI/Modal/Modal";
+import UpdateUser from "../UpdateUser/UpdateUser";
+import DeleteUser from "../DeleteUser/DeleteUser";
 
 class ViewUser extends Component {
   state = {
@@ -23,7 +23,7 @@ class ViewUser extends Component {
   componentDidMount() {
     axios
       .get(
-        `http://localhost:5000/api/v1/auth/users/${this.props.match.params.id}`
+        `https://child-health-is.herokuapp.com/api/v1/auth/users/${this.props.match.params.id}`
       )
       .then((response) =>
         this.setState({
@@ -35,7 +35,7 @@ class ViewUser extends Component {
 
     axios
       .get(
-        `http://localhost:5000/api/v1/auth/users/${this.props.match.params.id}/children`
+        `https://child-health-is.herokuapp.com/api/v1/auth/users/${this.props.match.params.id}/children`
       )
       .then((response) => {
         this.setState({ childLoading: true, children: response.data.data });
@@ -59,14 +59,14 @@ class ViewUser extends Component {
           <div className={classes.ViewUserInner2}>
             <span>
               {this.state.user.address}&nbsp;: العنوان&nbsp;&nbsp;
-              <i className='fas fa-map-marker-alt'></i>
+              <i className="fas fa-map-marker-alt"></i>
             </span>
             <span>
-              {this.state.user.createdAt.split('T')[0]}&nbsp;: وقت
-              الانشاء&nbsp;&nbsp;<i className='fas fa-address-card'></i>
+              {this.state.user.createdAt.split("T")[0]}&nbsp;: وقت
+              الانشاء&nbsp;&nbsp;<i className="fas fa-address-card"></i>
             </span>
             <button className={classes.Btn} onClick={this.showDeleteChild}>
-              {' '}
+              {" "}
               حذف الحساب
             </button>
           </div>
@@ -76,21 +76,21 @@ class ViewUser extends Component {
               &nbsp; أسم المستخدم :&nbsp;&nbsp;{this.state.user.name}
               &nbsp;&nbsp;
               <span>
-                <i className='fas fa-user'></i>
+                <i className="fas fa-user"></i>
               </span>
             </h4>
             <span>
               {this.state.user.email}&nbsp;: البريد الإلكتروني &nbsp;&nbsp;
-              <i className='fas fa-mail-bulk'></i>
+              <i className="fas fa-mail-bulk"></i>
             </span>
             <span>
               {this.state.user.phone} &nbsp;: الهاتف &nbsp;&nbsp;
-              <i className='fas fa-phone'></i>
+              <i className="fas fa-phone"></i>
             </span>
 
             <button className={classes.Btn} onClick={this.showUpdateUser}>
-              {' '}
-              تعديل{' '}
+              {" "}
+              تعديل{" "}
             </button>
           </div>
         </div>
@@ -106,10 +106,10 @@ class ViewUser extends Component {
               <div>
                 <h1
                   style={{
-                    textAlign: 'center',
-                    fontWeight: 'bold',
-                    marginTop: '1rem',
-                    color: '#0c2854',
+                    textAlign: "center",
+                    fontWeight: "bold",
+                    marginTop: "1rem",
+                    color: "#0c2854",
                   }}
                 >
                   الأطفال الخاصه بالمستخدم
@@ -123,10 +123,10 @@ class ViewUser extends Component {
         children = (
           <h1
             style={{
-              textAlign: 'center',
-              fontWeight: 'bold',
-              marginTop: '5rem',
-              color: '#0c2854',
+              textAlign: "center",
+              fontWeight: "bold",
+              marginTop: "5rem",
+              color: "#0c2854",
             }}
           >
             ... لا يوجد اطفال لهذا المستخدم
@@ -139,7 +139,7 @@ class ViewUser extends Component {
         {person}
         {this.state.userLoading ? (
           <Aux>
-            {' '}
+            {" "}
             <Backdrop
               show={this.state.showUpdate}
               clicked={this.showUpdateUser}

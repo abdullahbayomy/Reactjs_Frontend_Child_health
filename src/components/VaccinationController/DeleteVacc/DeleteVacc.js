@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import classes from './DeleteVacc.css';
-import axios from 'axios';
+import React, { Component } from "react";
+import classes from "./DeleteVacc.css";
+import axios from "axios";
 
 class DeleteVacc extends Component {
   deleteVaccHandler = () => {
     const config = {
       header: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     };
     let removeVacc = {
@@ -21,7 +21,11 @@ class DeleteVacc extends Component {
     };
     console.log(removeVacc);
     axios
-      .put(`http://localhost:5000/api/v1/children/remove`, removeVacc, config)
+      .put(
+        `https://child-health-is.herokuapp.com/api/v1/children/remove`,
+        removeVacc,
+        config
+      )
       .then((response) => {
         console.log(response);
         window.location.reload(false);
@@ -32,7 +36,7 @@ class DeleteVacc extends Component {
     return (
       <div
         style={{
-          display: this.props.show ? 'block' : 'none',
+          display: this.props.show ? "block" : "none",
         }}
       >
         <div className={classes.Container}>

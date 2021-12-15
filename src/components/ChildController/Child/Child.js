@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import classes from './Child.css';
-import Aux from '../../../hoc/auxilliary';
-import { withRouter } from 'react-router-dom';
-import Backdrop from '../../UI/Backdrop/Backdrop';
-import Modal from '../../UI/Modal/Modal';
+import React, { Component } from "react";
+import classes from "./Child.css";
+import Aux from "../../../hoc/auxilliary";
+import { withRouter } from "react-router-dom";
+import Backdrop from "../../UI/Backdrop/Backdrop";
+import Modal from "../../UI/Modal/Modal";
 // import Spinner from '../../UI/Spinner/Spinner';
-import VaccChild from '../ViewChild/VaccChild/VaccChild';
-import axios from 'axios';
+import VaccChild from "../ViewChild/VaccChild/VaccChild";
+import axios from "axios";
 
 class Child extends Component {
   state = {
@@ -27,7 +27,9 @@ class Child extends Component {
   showVaccHandler = () => {
     this.setState({ showVacc: !this.state.showVacc });
     axios
-      .get(`http://localhost:5000/api/v1/children/${this.props.helpId}`)
+      .get(
+        `https://child-health-is.herokuapp.com/api/v1/children/${this.props.helpId}`
+      )
       .then((response) => {
         console.log(response.data.data);
         this.setState({ child: response.data.data, loading: true });
@@ -76,23 +78,23 @@ class Child extends Component {
           <div className={classes.ChildrenInner2}>
             <span>
               {hasTaken.length} &nbsp;&nbsp;: كل التطعيمات &nbsp;
-              <i className='fas fa-user-md'></i>
+              <i className="fas fa-user-md"></i>
             </span>
             <span>
               {taken}&nbsp;&nbsp;: التطعيمات المأخوذة &nbsp;
-              <i className='fas fa-syringe'></i>
+              <i className="fas fa-syringe"></i>
             </span>
             <span>
               {notTaken}&nbsp;&nbsp;: التطعيمات المتبقية &nbsp;
-              <i className='fas fa-notes-medical'></i>
+              <i className="fas fa-notes-medical"></i>
             </span>
             {/* <button className={classes.Btn} onClick={this.showVaccHandler}>
               {' '}
               عرض التطعيمات{' '}
             </button> */}
             <button className={classes.Btn} onClick={this.selectedIdHandler}>
-              {' '}
-              عرض الكل{' '}
+              {" "}
+              عرض الكل{" "}
             </button>
           </div>
 
@@ -100,16 +102,16 @@ class Child extends Component {
             <h4>
               <span>
                 &nbsp; اسم الطفل :&nbsp;&nbsp;{this.props.name}
-                &nbsp;&nbsp;<i className='fas fa-child'></i>
+                &nbsp;&nbsp;<i className="fas fa-child"></i>
               </span>
             </h4>
             <span>
               {this.props.date} &nbsp;&nbsp;: تاريخ الميلاد &nbsp;
-              <i className='fas fa-birthday-cake'></i>
+              <i className="fas fa-birthday-cake"></i>
             </span>
             <span>
               &nbsp; محل الميلاد :&nbsp;&nbsp;{this.props.place}
-              &nbsp;&nbsp;<i className='fas fa-map-marker-alt'></i>
+              &nbsp;&nbsp;<i className="fas fa-map-marker-alt"></i>
             </span>
           </div>
         </div>

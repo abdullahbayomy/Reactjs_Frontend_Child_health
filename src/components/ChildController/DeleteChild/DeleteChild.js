@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import classes from './DeleteChild.css';
-import { withRouter } from 'react-router-dom';
-import axios from 'axios';
+import React, { Component } from "react";
+import classes from "./DeleteChild.css";
+import { withRouter } from "react-router-dom";
+import axios from "axios";
 
 class DeleteChild extends Component {
   deleteChildHandler = () => {
     axios
       .delete(
-        `http://localhost:5000/api/v1/auth/users/${this.props.idUser}/children/${this.props.match.params.id}`
+        `https://child-health-is.herokuapp.com/api/v1/auth/users/${this.props.idUser}/children/${this.props.match.params.id}`
       )
       .then((response) => {
         console.log(response);
-        this.props.history.push('/children');
+        this.props.history.push("/children");
       })
       .catch((error) => console.log(error));
   };
@@ -20,7 +20,7 @@ class DeleteChild extends Component {
     return (
       <div
         style={{
-          display: this.props.show ? 'block' : 'none',
+          display: this.props.show ? "block" : "none",
         }}
       >
         <div className={classes.Container}>
