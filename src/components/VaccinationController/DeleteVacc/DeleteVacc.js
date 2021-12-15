@@ -19,7 +19,7 @@ class DeleteVacc extends Component {
       additionalVacc: this.props.additionalVacc,
       taken: this.props.taken,
     };
-    console.log(removeVacc);
+    // console.log(removeVacc);
     axios
       .put(
         `https://child-health-is.herokuapp.com/api/v1/children/remove`,
@@ -27,7 +27,7 @@ class DeleteVacc extends Component {
         config
       )
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         window.location.reload(false);
       })
       .catch((error) => console.log(error));

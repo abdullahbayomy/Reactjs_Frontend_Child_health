@@ -86,7 +86,7 @@ class Users extends Component {
           config
         )
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           this.setState({ loadCreate: false, showModal: false });
           window.location.reload(false);
         })
@@ -118,7 +118,7 @@ class Users extends Component {
   changeSearchHandler = (e) => {
     if (this.text.current.value !== "") {
       this.filtered(e.target.value);
-      console.log(this.state.filterdUser);
+      // console.log(this.state.filterdUser);
     } else {
       this.setState({ filterdUser: null });
     }

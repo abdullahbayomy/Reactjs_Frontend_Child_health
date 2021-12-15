@@ -45,8 +45,8 @@ class Login extends Component {
           axios
             .get("https://child-health-is.herokuapp.com/api/v1/auth/me")
             .then((res) => {
-              console.log(res);
-              console.log(res.data.data.role);
+              // console.log(res);
+              // console.log(res.data.data.role);
               if (res.data.data.role === "admin") {
                 localStorage.setItem("auth", res.data.data.role);
                 this.props.history.push("/");

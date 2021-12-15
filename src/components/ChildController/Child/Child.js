@@ -31,7 +31,7 @@ class Child extends Component {
         `https://child-health-is.herokuapp.com/api/v1/children/${this.props.helpId}`
       )
       .then((response) => {
-        console.log(response.data.data);
+        // console.log(response.data.data);
         this.setState({ child: response.data.data, loading: true });
       })
       .catch((error) => {

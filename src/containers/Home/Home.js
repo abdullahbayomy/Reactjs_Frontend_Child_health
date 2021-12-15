@@ -26,7 +26,7 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props);
+    // console.log(this.props);
     axios
       .get("https://child-health-is.herokuapp.com/api/v1/children")
       .then((response) => {
@@ -77,8 +77,8 @@ class Home extends Component {
         }
       }
     }
-    console.log(finalTaken);
-    console.log(finalNotTaken);
+    // console.log(finalTaken);
+    // console.log(finalNotTaken);
 
     this.setState({
       childenTaken: finalTaken,
@@ -124,7 +124,7 @@ class Home extends Component {
     } else {
       this.setState({ filterdNotTaken: null });
     }
-    console.log(this.state.filterdNotTaken);
+    // console.log(this.state.filterdNotTaken);
   };
 
   render() {

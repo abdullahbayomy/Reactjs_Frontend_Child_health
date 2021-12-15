@@ -14,7 +14,7 @@ class UpdateUser extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props);
+    // console.log(this.props);
   }
 
   componentDidUpdate() {
@@ -23,7 +23,7 @@ class UpdateUser extends Component {
         let password = this.state.password;
         let user = { ...this.props.user, password };
         this.setState({ currentUser: user, loadUser: true });
-        console.log(this.state.currentUser);
+        // console.log(this.state.currentUser);
       }, 1000);
     }
   }
@@ -52,10 +52,10 @@ class UpdateUser extends Component {
     };
     if (!this.state.currentUser.password) {
       userData = { ...userData };
-      console.log(userData);
+      // console.log(userData);
     } else {
       userData = { ...this.state.currentUser };
-      console.log(userData);
+      // console.log(userData);
     }
 
     const config = {
@@ -71,7 +71,7 @@ class UpdateUser extends Component {
         config
       )
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         this.setState({ loadSpinnerUpdate: false, loadUser: false });
         this.props.history.go(`/users/${this.props.match.params.id}`);
       })

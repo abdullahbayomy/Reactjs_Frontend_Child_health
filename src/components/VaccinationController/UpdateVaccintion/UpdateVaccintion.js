@@ -43,7 +43,7 @@ class UpdateVaccintion extends Component {
         config
       )
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         this.setState({ loadAddVacc: false });
         window.location.reload(false);
       })

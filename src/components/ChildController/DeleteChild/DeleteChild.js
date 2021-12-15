@@ -10,7 +10,7 @@ class DeleteChild extends Component {
         `https://child-health-is.herokuapp.com/api/v1/auth/users/${this.props.idUser}/children/${this.props.match.params.id}`
       )
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         this.props.history.push("/children");
       })
       .catch((error) => console.log(error));

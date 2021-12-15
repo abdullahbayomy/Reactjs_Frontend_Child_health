@@ -21,7 +21,7 @@ class Children extends Component {
     axios
       .get("https://child-health-is.herokuapp.com/api/v1/children")
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         this.setState({
           loading: true,
           children: response.data.data,
@@ -44,7 +44,7 @@ class Children extends Component {
   changeSearchHandler = (e) => {
     if (this.text.current.value !== "") {
       this.filtered(e.target.value);
-      console.log(this.state.filterdUser);
+      // console.log(this.state.filterdUser);
     } else {
       this.setState({ filterdUser: null });
     }

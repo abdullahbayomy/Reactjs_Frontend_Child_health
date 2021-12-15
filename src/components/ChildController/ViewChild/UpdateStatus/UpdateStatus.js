@@ -40,7 +40,9 @@ class UpdateStatus extends Component {
         allVacc,
         config
       )
-      .then((response) => console.log(response))
+      .then((response) => {
+        // console.log(response)
+      })
       .catch((error) => console.log(error));
   };
   render() {

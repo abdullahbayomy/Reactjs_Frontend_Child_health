@@ -21,14 +21,14 @@ class ViewChild extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props.match.params.id);
+    // console.log(this.props.match.params.id);
 
     axios
       .get(
         `https://child-health-is.herokuapp.com/api/v1/children/${this.props.match.params.id}`
       )
       .then((response) => {
-        console.log(response.data.data);
+        // console.log(response.data.data);
         this.setState({ child: response.data.data });
 
         axios
@@ -36,7 +36,7 @@ class ViewChild extends Component {
             `https://child-health-is.herokuapp.com/api/v1/auth/users/${response.data.data.user}`
           )
           .then((response) => {
-            console.log(response.data.data);
+            // console.log(response.data.data);
             this.setState({ user: response.data.data, loading: true });
           })
           .catch((error) => {
@@ -84,7 +84,7 @@ class ViewChild extends Component {
         config
       )
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         this.setState({ loadSpinnerUpdate: false, showUpdate: false });
       })
       .catch((error) => {
